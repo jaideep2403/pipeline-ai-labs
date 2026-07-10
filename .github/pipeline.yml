@@ -1,0 +1,24 @@
+name: GH Pipeline 01
+
+on:
+  push:
+    paths:
+      - '01-initial/**'
+    branches:
+      - main
+      - dev
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - mame: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: List Files
+        uses: ls -l
+
+      - name: Confirm
+        uses: echo "pipelines is working"
+  
