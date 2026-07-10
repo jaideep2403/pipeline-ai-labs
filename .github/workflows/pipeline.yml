@@ -1,5 +1,4 @@
 name: GH Pipeline 01
-
 on:
   push:
     paths:
@@ -7,18 +6,16 @@ on:
     branches:
       - main
       - dev
-
 jobs:
   check:
     runs-on: ubuntu-latest
-
     steps:
-      - mame: Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v4
-        
+
       - name: List Files
-        uses: ls -l
+        run: ls -l
 
       - name: Confirm
-        uses: echo "pipelines is working"
+        run: echo "pipeline is working"
   
